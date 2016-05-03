@@ -3,6 +3,7 @@ ENV['RACK_ENV'] = 'test'
 require 'capybara'
 require 'rspec'
 require 'capybara/rspec'
+require './app/models/link'
 
 
 # Capybara.app = Bookmark_manager
