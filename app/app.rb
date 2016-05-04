@@ -6,7 +6,7 @@ require './app/models/link.rb'
 
 class Bookmark_manager < Sinatra::Base
   get '/' do
-    "Hello World"
+    redirect to ('/links')
   end
 
   get '/links' do
