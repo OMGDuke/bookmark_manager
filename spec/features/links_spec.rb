@@ -19,9 +19,7 @@ feature 'creating links' do
     click_button 'submit'
 
     expect(current_path).to eq '/links'
-    
-    within 'ul#links' do
-      expect(page).to have_content 'Title: Google URL: http://www.google.com'
-    end
+
+    expect(page).to have_content 'Title: Google URL: http://www.google.com'
   end
 end
