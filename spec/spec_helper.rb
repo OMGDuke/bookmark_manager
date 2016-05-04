@@ -1,4 +1,4 @@
-# ENV['RACK_ENV'] = 'test'
+ENV['RACK_ENV'] = 'test'
 #
 # require File.join(File.dirname(__FILE__), '..', './app/app.rb')
 
@@ -8,6 +8,7 @@ require 'sinatra'
 require 'capybara/rspec'
 require './app/models/link'
 require './app/app'
+require 'database_cleaner'
 
 Capybara.app=Bookmark_manager
 
@@ -34,6 +35,19 @@ RSpec.configure do |config|
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
   config.include Capybara::DSL
+
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.before(:each) do
+    DatabaseCleaner.start
+  end
+
+  config.after(:each) do
+    DatabaseCleaner.clean
+  end
   config.expect_with :rspec do |expectations|
     # This option will default to `true` in RSpec 4. It makes the `description`
     # and `failure_message` of custom matchers include text for helper methods
