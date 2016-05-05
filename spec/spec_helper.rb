@@ -11,6 +11,7 @@ require './app/models/link'
 require './app/app'
 require 'tilt/erb'
 require 'database_cleaner'
+require_relative 'web_helper'
 
 RSpec.configure do |config|
   config.before(:suite) do
