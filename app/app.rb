@@ -16,7 +16,8 @@ set :session_secret, 'super secret'
   end
 
   get '/' do
-    redirect to '/links'
+    # redirect to '/links'
+    'hello'
   end
 
   get '/links' do
