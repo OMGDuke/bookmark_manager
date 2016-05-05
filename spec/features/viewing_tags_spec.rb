@@ -3,7 +3,7 @@ feature 'Viewing tags' do
   before :each do
     Link.create(url: 'http://www.makersacademy.com', title: 'Makers Academy', tags: [Tag.first_or_create(name: 'education')])
     Link.create(url: 'http://www.codecademy.com', title: 'Codecademy', tags: [Tag.first_or_create(name: 'education')])
-    Link.create(url: 'http://www.google.com', title: 'Google', tags: [Tag.first_or_create(name: 'search')])
+    Link.create(url: 'http://www.google.com', title: 'Google', tags: [Tag.first_or_create(name: 'fun search')])
   end
 
   scenario 'I can filter my links by specific tags' do
