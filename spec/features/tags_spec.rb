@@ -27,7 +27,8 @@ end
 
   scenario 'I can add multiple tags to a link' do
     add_multiple_tags
-    expect(page).to have_content('Tags: news media puppies')
+    link = Link.all
+    expect(link.tags.map(&:name)).to include('news', 'media', 'puppies')
   end
 
 end
