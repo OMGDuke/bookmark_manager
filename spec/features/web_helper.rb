@@ -17,7 +17,7 @@ end
 def new_user
   visit '/users/new'
   expect(page.status_code).to eq 200
-  fill_in 'username', with: 'Bob'
-  fill_in 'password', with: '123456'
+  fill_in :username, with: 'Bob'
+  fill_in :password, with: '123456'
   click_button 'submit'
 end

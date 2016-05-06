@@ -44,7 +44,7 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/users/new' do
-    erb :user
+    erb :'users/new'
   end
 
   post '/users' do
