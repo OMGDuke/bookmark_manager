@@ -10,5 +10,4 @@ include DataMapper::Resource
   def password= password
     self.password_digest = BCrypt::Password.create(password)
   end
-
 end
