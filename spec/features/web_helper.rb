@@ -19,15 +19,6 @@ def new_user
   expect(page.status_code).to eq 200
   fill_in :username, with: 'Bob'
   fill_in :password, with: '123456'
-  click_button 'submit'
-end
-
-def sign_up(username: 'bob',
-            password: '12345',
-            password_confirmation: '12345')
-  visit '/users/new'
-  fill_in :username, with: username
-  fill_in :password, with: password
-  fill_in :password_confirmation, with: password_confirmation
+  fill_in :password_confirmation, with: '123456'
   click_button 'submit'
 end

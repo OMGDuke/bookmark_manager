@@ -9,3 +9,4 @@ gem "dm-postgres-adapter"
 gem 'rspec'
 gem 'database_cleaner'
 gem 'rake'
+gem 'sinatra-flash'
